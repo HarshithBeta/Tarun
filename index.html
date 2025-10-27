@@ -56,25 +56,31 @@
         </div>
     </div>
 
-    <!-- Transition 1: Blinking Images -->
-    <div id="transition1" class="page transition">
-        <div class="transition-images">
-            <div class="transition-image" id="img1"></div>
-            <div class="transition-image" id="img2"></div>
-            <div class="transition-image" id="img3"></div>
-        </div>
-        <div class="transition-text">
-            <h2>Preparing your care...</h2>
-        </div>
+
+<!-- Transition 1: Blinking Images -->
+<div id="transition1" class="page transition">
+    <div class="transition-images">
+        <div class="transition-image" id="img1"></div>
+        <div class="transition-image" id="img2"></div>
+        <div class="transition-image" id="img3"></div>
     </div>
+    <div class="transition-text">
+        <h2>Preparing your care...</h2>
+    </div>
+</div>
+
+
 
     <!-- Page 2: Question Selection -->
     <div id="page2" class="page">
+        <div class="questions-header">
+            <h1 class="page-heading">How are you feeling today?</h1>
+        </div>
         <div class="questions-container">
-            <div class="question-card" data-question="feeling">
+            <div class="question-card" data-question="angry">
                 <div class="member-avatar jin-avatar"></div>
-                <h3>How are you feeling today?</h3>
-                <div class="sparkles">✨</div>
+                <h3>Are you angry?</h3>
+                <div class="sparkles">😠</div>
             </div>
             
             <div class="question-card" data-question="sick">
@@ -103,14 +109,68 @@
         </div>
     </div>
 
-    <!-- Transition 2: Sliding Animation -->
+    <!-- Transition 2: Revolutionary Cure Discovery Animation -->
     <div id="transition2" class="page transition">
-        <div class="sliding-container">
-            <div class="sliding-member" id="slidingMember"></div>
-            <div class="slope"></div>
+        <div class="universe-container">
+            <div class="galaxy-layer layer-1"></div>
+            <div class="galaxy-layer layer-2"></div>
+            <div class="galaxy-layer layer-3"></div>
         </div>
-        <div class="transition-text">
-            <h2>Finding your cure...</h2>
+        
+        <div class="energy-field">
+            <div class="energy-wave wave-1"></div>
+            <div class="energy-wave wave-2"></div>
+            <div class="energy-wave wave-3"></div>
+            <div class="energy-wave wave-4"></div>
+        </div>
+        
+        <div class="molecular-structure">
+            <div class="molecule" style="--x: 20%; --y: 30%; --delay: 0s;"></div>
+            <div class="molecule" style="--x: 80%; --y: 20%; --delay: 0.5s;"></div>
+            <div class="molecule" style="--x: 30%; --y: 70%; --delay: 1s;"></div>
+            <div class="molecule" style="--x: 70%; --y: 80%; --delay: 1.5s;"></div>
+            <div class="molecule" style="--x: 50%; --y: 50%; --delay: 2s;"></div>
+            <div class="molecule" style="--x: 15%; --y: 50%; --delay: 0.3s;"></div>
+            <div class="molecule" style="--x: 85%; --y: 50%; --delay: 0.8s;"></div>
+            <div class="molecule" style="--x: 50%; --y: 15%; --delay: 1.3s;"></div>
+            <div class="molecule" style="--x: 50%; --y: 85%; --delay: 1.8s;"></div>
+        </div>
+        
+        <div class="dna-helix">
+            <div class="dna-strand strand-1"></div>
+            <div class="dna-strand strand-2"></div>
+            <div class="dna-base-pair" style="--rotation: 0deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 36deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 72deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 108deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 144deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 180deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 216deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 252deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 288deg;"></div>
+            <div class="dna-base-pair" style="--rotation: 324deg;"></div>
+        </div>
+        
+        <div class="cure-discovery-content">
+            <div class="sliding-container">
+                <div class="sliding-member" id="slidingMember"></div>
+                <div class="slope"></div>
+            </div>
+            <div class="transition-text">
+                <h2 class="cure-text">Finding your cure...</h2>
+                <div class="discovery-progress">
+                    <div class="progress-ring">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-percentage">0%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quantum-scanner">
+            <div class="scanner-line line-1"></div>
+            <div class="scanner-line line-2"></div>
+            <div class="scanner-line line-3"></div>
         </div>
     </div>
 
@@ -118,8 +178,8 @@
     <div id="page3" class="page">
         <div class="cure-container">
             <div class="cure-header">
-                <h1 class="cure-title">you are</h1>
-                <h2 class="cure-word" id="cureWord">CURE</h2>
+                <h1 class="cure-title" id="cureTitle">you are</h1>
+                <h2 class="cure-word" id="cureWord">cute</h2>
             </div>
             
             <div class="cure-content" id="cureContent">

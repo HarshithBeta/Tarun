@@ -29,12 +29,12 @@ function createStars() {
 function addMemberEmojis() {
     const members = [
         { selector: '.jin-face', emoji: '😊' },
-        { selector: '.suga-face', emoji: '😎' },
-        { selector: '.jhope-face', emoji: '😄' },
-        { selector: '.rm-face', emoji: '🤔' },
-        { selector: '.jimin-face', emoji: '🥰' },
-        { selector: '.v-face', emoji: '😌' },
-        { selector: '.jungkook-face', emoji: '😇' }
+        { selector: '.suga-face', emoji: '😔' },
+        { selector: '.jhope-face', emoji: '😤' },
+        { selector: '.rm-face', emoji: '🤤' },
+        { selector: '.jimin-face', emoji: '🫠' },
+        { selector: '.v-face', emoji: '😚' },
+        { selector: '.jungkook-face', emoji: '🤒' }
     ];
     
     members.forEach(member => {
@@ -88,41 +88,176 @@ function showTransition1() {
     const page1 = document.getElementById('page1');
     const transition1 = document.getElementById('transition1');
     
-    // Hide page 1
-    page1.classList.remove('active');
+    // Simple fade out for page 1
+    page1.style.transition = 'opacity 0.5s ease-out';
+    page1.style.opacity = '0';
     
-    // Show transition 1
-    transition1.classList.add('active');
-    
-    // Start blinking animation
-    startBlinkingAnimation();
-    
-    // After 3 seconds, show page 2
+    // Show transition 1 after fade
     setTimeout(() => {
-        transition1.classList.remove('active');
-        showPage2();
-    }, 3000);
+        page1.classList.remove('active');
+        transition1.classList.add('active');
+        startRevolutionaryTransition();
+    }, 500);
+    
+    // After 4 seconds, show page 2 with simple fade
+    setTimeout(() => {
+        transitionToPage2();
+    }, 4000);
 }
 
-function startBlinkingAnimation() {
-    const images = document.querySelectorAll('.transition-image');
-    let blinkCount = 0;
-    const maxBlinks = 4;
+function startRevolutionaryTransition() {
+    const particles = document.querySelectorAll('.particle');
+    const neuralNodes = document.querySelectorAll('.neural-node');
+    const quantumImages = document.querySelectorAll('.quantum-image');
     
-    const blinkInterval = setInterval(() => {
-        images.forEach((img, index) => {
-            img.style.animation = 'none';
-            setTimeout(() => {
-                img.style.animation = 'blink 0.5s ease-in-out infinite';
-            }, 100);
-        });
-        
-        blinkCount++;
-        if (blinkCount >= maxBlinks) {
-            clearInterval(blinkInterval);
-        }
-    }, 750);
+    // Stagger particle animations
+    particles.forEach((particle, index) => {
+        setTimeout(() => {
+            particle.style.animationPlayState = 'running';
+        }, index * 100);
+    });
+    
+    // Stagger neural network activation
+    neuralNodes.forEach((node, index) => {
+        setTimeout(() => {
+            node.style.animationPlayState = 'running';
+        }, index * 200);
+    });
+    
+    // Stagger quantum image transformations
+    quantumImages.forEach((image, index) => {
+        setTimeout(() => {
+            image.style.animationPlayState = 'running';
+            // Add quantum distortion effect
+            image.style.filter = `hue-rotate(${index * 60}deg) blur(0px)`;
+        }, index * 300);
+    });
+    
+    // Add quantum field effect
+    setTimeout(() => {
+        addQuantumFieldEffect();
+    }, 1500);
 }
+
+function addQuantumFieldEffect() {
+    const transition1 = document.getElementById('transition1');
+    
+    // Create quantum field overlay
+    const quantumField = document.createElement('div');
+    quantumField.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,255,255,0.1) 50%, transparent 100%);
+        animation: quantumFieldPulse 2s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 4;
+    `;
+    
+    transition1.appendChild(quantumField);
+    
+    // Add CSS for quantum field animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes quantumFieldPulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+function transitionToPage2() {
+    const transition1 = document.getElementById('transition1');
+    const page2 = document.getElementById('page2');
+    
+    // Simple fade out for transition
+    transition1.style.transition = 'opacity 0.5s ease-out';
+    transition1.style.opacity = '0';
+    
+    // Show page 2 with simple fade in
+    setTimeout(() => {
+        transition1.classList.remove('active');
+        page2.classList.add('active');
+        page2.style.transition = 'opacity 0.5s ease-in';
+        page2.style.opacity = '1';
+        
+        // Add entrance animation to question cards
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s ease-out';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 150);
+        });
+    }, 500);
+}
+
+// Add CSS for quantum collapse and dimensional entrance
+const quantumStyles = document.createElement('style');
+quantumStyles.textContent = `
+    @keyframes quantumCollapse {
+        0% { 
+            transform: scale(1) rotateY(0deg);
+            opacity: 1;
+            filter: blur(0px);
+        }
+        50% { 
+            transform: scale(0.8) rotateY(180deg);
+            opacity: 0.5;
+            filter: blur(5px);
+        }
+        100% { 
+            transform: scale(0.3) rotateY(360deg);
+            opacity: 0;
+            filter: blur(20px);
+        }
+    }
+    
+    @keyframes dimensionalEntrance {
+        0% { 
+            transform: translateZ(-1000px) rotateX(90deg);
+            opacity: 0;
+            filter: blur(20px);
+        }
+        50% { 
+            transform: translateZ(-500px) rotateX(45deg);
+            opacity: 0.5;
+            filter: blur(10px);
+        }
+        100% { 
+            transform: translateZ(0) rotateX(0deg);
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+    
+    @keyframes quantumFadeOut {
+        0% { 
+            transform: scale(1);
+            opacity: 1;
+            filter: blur(0px);
+        }
+        100% { 
+            transform: scale(0.9);
+            opacity: 0;
+            filter: blur(10px);
+        }
+    }
+`;
+document.head.appendChild(quantumStyles);
 
 function showPage2() {
     const page2 = document.getElementById('page2');
@@ -145,21 +280,241 @@ function showPage2() {
 function showTransition2(question) {
     const page2 = document.getElementById('page2');
     const transition2 = document.getElementById('transition2');
+
+    // Smooth fade out for page2
+    page2.style.transition = 'opacity 0.5s ease-out';
+    page2.style.opacity = '0';
+
+    // After fade completes, swap pages and fade in transition2
+    setTimeout(() => {
+        page2.classList.remove('active');
+
+        // Make transition2 visible and start with 0 opacity
+        transition2.classList.add('active');
+        transition2.style.opacity = '0';
+        transition2.style.transition = 'opacity 0.6s ease-in';
+
+        // ensure browser paints opacity:0 then animate to 1
+        requestAnimationFrame(() => {
+            transition2.style.opacity = '1';
+        });
+
+        startCureDiscoverySequence(question);
+    }, 500);
+
+    // After 4.5 seconds, transition to the final page (unchanged timing)
+    setTimeout(() => {
+        transitionToFinalPage(question);
+    }, 4500);
+}
+
+
+function startCureDiscoverySequence(question) {
+    const molecules = document.querySelectorAll('.molecule');
+    const dnaBasePairs = document.querySelectorAll('.dna-base-pair');
+    const energyWaves = document.querySelectorAll('.energy-wave');
+    const scannerLines = document.querySelectorAll('.scanner-line');
+    const progressPercentage = document.querySelector('.progress-percentage');
     
-    // Hide page 2
-    page2.classList.remove('active');
+    // Stagger molecular activation
+    molecules.forEach((molecule, index) => {
+        setTimeout(() => {
+            molecule.style.animationPlayState = 'running';
+            // Add molecular bonding effect
+            molecule.style.boxShadow = `0 0 30px #ff6b6b, 0 0 60px #ff6b6b`;
+        }, index * 150);
+    });
     
-    // Show transition 2
-    transition2.classList.add('active');
+    // Stagger DNA helix formation
+    dnaBasePairs.forEach((basePair, index) => {
+        setTimeout(() => {
+            basePair.style.animationPlayState = 'running';
+            // Add genetic sequencing effect
+            basePair.style.filter = `hue-rotate(${index * 30}deg)`;
+        }, index * 200);
+    });
     
-    // Start sliding animation
-    startSlidingAnimation(question);
+    // Stagger energy wave propagation
+    energyWaves.forEach((wave, index) => {
+        setTimeout(() => {
+            wave.style.animationPlayState = 'running';
+        }, index * 300);
+    });
     
-    // After 2.5 seconds, show page 3
+    // Stagger quantum scanner activation
+    scannerLines.forEach((line, index) => {
+        setTimeout(() => {
+            line.style.animationPlayState = 'running';
+        }, index * 400);
+    });
+    
+    // Animate progress percentage
+    animateProgressPercentage(progressPercentage);
+    
+    // Add quantum field effect
+    setTimeout(() => {
+        addCureQuantumField();
+    }, 2000);
+}
+
+function animateProgressPercentage(element) {
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15 + 5; // Random increment between 5-20
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+        }
+        element.textContent = Math.floor(progress) + '%';
+        
+        // Add pulsing effect based on progress
+        if (progress > 50) {
+            element.style.color = '#00ffff';
+            element.style.textShadow = '0 0 15px #00ffff';
+        }
+        if (progress > 80) {
+            element.style.color = '#ff00ff';
+            element.style.textShadow = '0 0 20px #ff00ff';
+        }
+    }, 200);
+}
+
+function addCureQuantumField() {
+    const transition2 = document.getElementById('transition2');
+    
+    // Create quantum field overlay
+    const quantumField = document.createElement('div');
+    quantumField.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,255,0,0.1) 50%, transparent 100%);
+        animation: cureQuantumFieldPulse 2.5s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 7;
+    `;
+    
+    transition2.appendChild(quantumField);
+    
+    // Add CSS for quantum field animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes cureQuantumFieldPulse {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.3) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+function transitionToFinalPage(question) {
+    const transition2 = document.getElementById('transition2');
+    const page3 = document.getElementById('page3');
+    
+    // Simple fade out for transition
+    transition2.style.transition = 'opacity 0.5s ease-out';
+    transition2.style.opacity = '0';
+    
+    // Show page 3 with simple fade in
     setTimeout(() => {
         transition2.classList.remove('active');
-        showPage3(question);
-    }, 2500);
+        page3.classList.add('active');
+        page3.style.transition = 'opacity 0.5s ease-in';
+        page3.style.opacity = '1';
+        
+        // Load cure content
+        loadCureContent(question);
+        
+        // Start text transformation after 10 seconds
+        setTimeout(() => {
+            startTextTransformation();
+        }, 2000);
+    }, 500);
+}
+
+// Add CSS for molecular synthesis and biological emergence
+const cureStyles = document.createElement('style');
+cureStyles.textContent = `
+    @keyframes molecularDissolution {
+        0% { 
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+            filter: blur(0px);
+        }
+        50% { 
+            transform: scale(0.8) rotate(180deg);
+            opacity: 0.6;
+            filter: blur(3px);
+        }
+        100% { 
+            transform: scale(0.5) rotate(360deg);
+            opacity: 0;
+            filter: blur(10px);
+        }
+    }
+    
+    @keyframes molecularSynthesis {
+        0% { 
+            transform: scale(1) rotateY(0deg);
+            opacity: 1;
+            filter: blur(0px);
+        }
+        50% { 
+            transform: scale(0.7) rotateY(180deg);
+            opacity: 0.4;
+            filter: blur(8px);
+        }
+        100% { 
+            transform: scale(0.2) rotateY(360deg);
+            opacity: 0;
+            filter: blur(25px);
+        }
+    }
+    
+    @keyframes biologicalEmergence {
+        0% { 
+            transform: translateZ(-2000px) rotateX(90deg) scale(0.3);
+            opacity: 0;
+            filter: blur(30px);
+        }
+        30% { 
+            transform: translateZ(-1000px) rotateX(60deg) scale(0.6);
+            opacity: 0.3;
+            filter: blur(15px);
+        }
+        60% { 
+            transform: translateZ(-500px) rotateX(30deg) scale(0.9);
+            opacity: 0.7;
+            filter: blur(5px);
+        }
+        100% { 
+            transform: translateZ(0) rotateX(0deg) scale(1);
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+`;
+document.head.appendChild(cureStyles);
+
+function showPage3(question) {
+    const page3 = document.getElementById('page3');
+    page3.classList.add('active');
+    
+    // Load appropriate cure content
+    loadCureContent(question);
+    
+    // Start the text transformation animation after 10 seconds
+    setTimeout(() => {
+        startTextTransformation();
+    }, 10000);
 }
 
 function startSlidingAnimation(question) {
@@ -167,7 +522,7 @@ function startSlidingAnimation(question) {
     
     // Add appropriate emoji based on question
     const memberEmojis = {
-        'feeling': '😊',
+        'angry': '😠',
         'sick': '😎',
         'tired': '😄',
         'overwhelmed': '🤔',
@@ -183,18 +538,28 @@ function startSlidingAnimation(question) {
     }, 100);
 }
 
-function showPage3(question) {
-    const page3 = document.getElementById('page3');
-    page3.classList.add('active');
+
+function startTextTransformation() {
+    const cureTitle = document.getElementById('cureTitle');
+    const cureWord = document.getElementById('cureWord');
     
-    // Load appropriate cure content
-    loadCureContent(question);
-    
-    // Flash the cure word
+    // First transformation: "you are" -> "your"
     setTimeout(() => {
-        const cureWord = document.getElementById('cureWord');
-        cureWord.style.animation = 'flash 0.5s ease-in-out 3';
+        cureTitle.classList.add('text-transform');
+        setTimeout(() => {
+            cureTitle.textContent = 'your';
+            cureTitle.classList.remove('text-transform');
+        }, 400);
     }, 1000);
+    
+    // Second transformation: "cute" -> "cure"
+    setTimeout(() => {
+        cureWord.classList.add('text-transform');
+        setTimeout(() => {
+            cureWord.textContent = 'cure';
+            cureWord.classList.remove('text-transform');
+        }, 400);
+    }, 2000);
 }
 
 function loadCureContent(question) {
@@ -202,10 +567,10 @@ function loadCureContent(question) {
     const contactNumber = document.getElementById('contactNumber');
     
     const cureResponses = {
-        'feeling': {
-            title: 'Not feeling today?',
-            quote: '"You are not alone in this. The world is vast and you are small, but you matter." - Richard Siken',
-            message: 'You deserve good food today!',
+        'angry': {
+            title: 'Feeling angry?',
+            quote: '"Anger is just love disappointed. It\'s love with nowhere to go." - Richard Siken',
+            message: 'You deserve good food today! Plus a warm hug from Tarun.',
             number: '1'
         },
         'sick': {
@@ -246,17 +611,22 @@ function loadCureContent(question) {
 }
 
 function goToHomePage() {
-    // Hide all pages
+    // Hide all pages and reset animations
     const allPages = document.querySelectorAll('.page');
     allPages.forEach(page => {
         page.classList.remove('active');
+        // Reset any custom animations
+        page.style.animation = '';
+        page.style.transform = '';
+        page.style.opacity = '';
+        page.style.filter = '';
     });
     
     // Show page 1
     const page1 = document.getElementById('page1');
     page1.classList.add('active');
     
-    // Reset any animations
+    // Reset touch button animation
     const touchButton = document.getElementById('touchButton');
     touchButton.style.animation = 'fadeInUp 1s ease-out 0.6s both';
     
@@ -267,6 +637,28 @@ function goToHomePage() {
         card.style.transform = 'translateY(0)';
         card.style.transition = 'all 0.3s ease';
     });
+    
+    // Reset any transition animations
+    const transition1 = document.getElementById('transition1');
+    const transition2 = document.getElementById('transition2');
+    
+    if (transition1) {
+        transition1.style.animation = '';
+        transition1.style.transform = '';
+        transition1.style.opacity = '';
+        transition1.style.filter = '';
+    }
+    
+    if (transition2) {
+        transition2.style.animation = '';
+        transition2.style.transform = '';
+        transition2.style.opacity = '';
+        transition2.style.filter = '';
+    }
+    
+    // Clean up any dynamically added elements
+    const quantumFields = document.querySelectorAll('[style*="quantumField"]');
+    quantumFields.forEach(field => field.remove());
 }
 
 // Add some extra interactive effects
@@ -394,7 +786,7 @@ window.addEventListener('load', function() {
     loader.innerHTML = `
         <div style="text-align: center; color: white;">
             <div style="font-size: 2rem; margin-bottom: 20px;">💜</div>
-            <div style="font-size: 1.2rem; font-weight: 600;">Loading BTS Care...</div>
+            <div style="font-size: 1.2rem; font-weight: 600;">Fixing Saria Ghaziiii....</div>
         </div>
     `;
     
