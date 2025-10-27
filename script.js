@@ -427,6 +427,19 @@ function transitionToFinalPage(question) {
     setTimeout(() => {
         transition2.classList.remove('active');
         page3.classList.add('active');
+        setTimeout(()=>{
+    const title=document.getElementById('cureTitle');
+    const word=document.getElementById('cureWord');
+    title.style.opacity=0;
+    word.style.opacity=0;
+    setTimeout(()=>{
+        title.textContent='your';
+        word.textContent='cure';
+        title.style.opacity=1;
+        word.style.opacity=1;
+    },500);
+},5000);
+
         page3.style.transition = 'opacity 0.5s ease-in';
         page3.style.opacity = '1';
         
