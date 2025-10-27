@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS Care - How Are You Feeling Today?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Page 1: Main Question -->
+    <div id="page1" class="page active">
+        <div class="stars"></div>
+        <div class="bts-members-container">
+            <div class="bts-member" data-member="jin">
+                <div class="member-face jin-face"></div>
+                <div class="flower">🌸</div>
+            </div>
+            <div class="bts-member" data-member="suga">
+                <div class="member-face suga-face"></div>
+                <div class="flower">🌺</div>
+            </div>
+            <div class="bts-member" data-member="jhope">
+                <div class="member-face jhope-face"></div>
+                <div class="flower">🌻</div>
+            </div>
+            <div class="bts-member" data-member="rm">
+                <div class="member-face rm-face"></div>
+                <div class="flower">🌷</div>
+            </div>
+            <div class="bts-member" data-member="jimin">
+                <div class="member-face jimin-face"></div>
+                <div class="flower">🌹</div>
+            </div>
+            <div class="bts-member" data-member="v">
+                <div class="member-face v-face"></div>
+                <div class="flower">🌼</div>
+            </div>
+            <div class="bts-member" data-member="jungkook">
+                <div class="member-face jungkook-face"></div>
+                <div class="flower">🌿</div>
+            </div>
+        </div>
+        
+        <div class="main-question">
+            <h1 class="question-text">How are you feeling today, Saria?</h1>
+            <p class="subtitle">Please click on the button below with your gentle hand</p>
+            <button id="touchButton" class="touch-button">
+                <span class="button-text">TOUCH HERE WITH YOUR GENTLE HAND</span>
+                <div class="button-glow"></div>
+            </button>
+        </div>
+        
+        <div class="quote">
+            <p>"The goal of life is to have a good day today, tomorrow come back and read the same line"</p>
+        </div>
+    </div>
+
+    <!-- Transition 1: Blinking Images -->
+    <div id="transition1" class="page transition">
+        <div class="transition-images">
+            <div class="transition-image" id="img1"></div>
+            <div class="transition-image" id="img2"></div>
+            <div class="transition-image" id="img3"></div>
+        </div>
+        <div class="transition-text">
+            <h2>Preparing your care...</h2>
+        </div>
+    </div>
+
+    <!-- Page 2: Question Selection -->
+    <div id="page2" class="page">
+        <div class="questions-container">
+            <div class="question-card" data-question="feeling">
+                <div class="member-avatar jin-avatar"></div>
+                <h3>How are you feeling today?</h3>
+                <div class="sparkles">✨</div>
+            </div>
+            
+            <div class="question-card" data-question="sick">
+                <div class="member-avatar suga-avatar"></div>
+                <h3>Are you feeling sick?</h3>
+                <div class="sparkles">💊</div>
+            </div>
+            
+            <div class="question-card" data-question="tired">
+                <div class="member-avatar jhope-avatar"></div>
+                <h3>Tired?</h3>
+                <div class="sparkles">😴</div>
+            </div>
+            
+            <div class="question-card" data-question="overwhelmed">
+                <div class="member-avatar rm-avatar"></div>
+                <h3>Feeling overwhelmed/Anxiety?</h3>
+                <div class="sparkles">🌊</div>
+            </div>
+            
+            <div class="question-card" data-question="happy">
+                <div class="member-avatar jimin-avatar"></div>
+                <h3>Happy?</h3>
+                <div class="sparkles">🎉</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transition 2: Sliding Animation -->
+    <div id="transition2" class="page transition">
+        <div class="sliding-container">
+            <div class="sliding-member" id="slidingMember"></div>
+            <div class="slope"></div>
+        </div>
+        <div class="transition-text">
+            <h2>Finding your cure...</h2>
+        </div>
+    </div>
+
+    <!-- Page 3: Cure Response -->
+    <div id="page3" class="page">
+        <div class="cure-container">
+            <div class="cure-header">
+                <h1 class="cure-title">you are</h1>
+                <h2 class="cure-word" id="cureWord">CURE</h2>
+            </div>
+            
+            <div class="cure-content" id="cureContent">
+                <!-- Content will be dynamically loaded -->
+            </div>
+            
+            <div class="contact-info">
+                <p>Text <span id="contactNumber">1</span> to Tarun Sai</p>
+            </div>
+            
+            <button id="homeButton" class="home-button">
+                <span class="button-text">Try again?</span>
+                <div class="button-glow"></div>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
