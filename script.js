@@ -322,7 +322,7 @@ function startCureDiscoverySequence(question) {
             molecule.style.animationPlayState = 'running';
             // Add molecular bonding effect
             molecule.style.boxShadow = `0 0 30px #ff6b6b, 0 0 60px #ff6b6b`;
-        }, index * 150);
+        }, index * 100);
     });
     
     // Stagger DNA helix formation
@@ -331,21 +331,21 @@ function startCureDiscoverySequence(question) {
             basePair.style.animationPlayState = 'running';
             // Add genetic sequencing effect
             basePair.style.filter = `hue-rotate(${index * 30}deg)`;
-        }, index * 200);
+        }, index * 100);
     });
     
     // Stagger energy wave propagation
     energyWaves.forEach((wave, index) => {
         setTimeout(() => {
             wave.style.animationPlayState = 'running';
-        }, index * 300);
+        }, index * 150);
     });
     
     // Stagger quantum scanner activation
     scannerLines.forEach((line, index) => {
         setTimeout(() => {
             line.style.animationPlayState = 'running';
-        }, index * 400);
+        }, index * 200);
     });
     
     // Animate progress percentage
@@ -354,7 +354,7 @@ function startCureDiscoverySequence(question) {
     // Add quantum field effect
     setTimeout(() => {
         addCureQuantumField();
-    }, 2000);
+    }, 500);
 }
 
 function animateProgressPercentage(element) {
@@ -414,6 +414,24 @@ function addCureQuantumField() {
     `;
     document.head.appendChild(style);
 }
+function startCureTextTransition(){
+    const title=document.getElementById('cureTitle');
+    const word=document.getElementById('cureWord');
+    title.textContent="you're";
+    word.textContent="cute";
+    title.style.opacity=1;
+    word.style.opacity=1;
+    setTimeout(()=>{
+        title.style.opacity=0;
+        word.style.opacity=0;
+        setTimeout(()=>{
+            title.textContent='your';
+            word.textContent='cure';
+            title.style.opacity=1;
+            word.style.opacity=1;
+        },500);
+    },5000);
+}
 
 function transitionToFinalPage(question) {
     const transition2 = document.getElementById('transition2');
@@ -427,6 +445,7 @@ function transitionToFinalPage(question) {
     setTimeout(() => {
         transition2.classList.remove('active');
         page3.classList.add('active');
+        startCureTextTransition();
         setTimeout(()=>{
     const title=document.getElementById('cureTitle');
     const word=document.getElementById('cureWord');
@@ -520,7 +539,8 @@ document.head.appendChild(cureStyles);
 function showPage3(question) {
     const page3 = document.getElementById('page3');
     page3.classList.add('active');
-    
+    startCureTextTransition();
+
     // Load appropriate cure content
     loadCureContent(question);
     
