@@ -798,7 +798,7 @@ window.addEventListener('load', function() {
     
     loader.innerHTML = `
         <div style="text-align: center; color: white;">
-            <div style="font-size: 2rem; margin-bottom: 20px;">💜</div>
+            <div style="font-size: 2rem; margin-bottom: 20px;">🤗</div>
             <div style="font-size: 1.2rem; font-weight: 600;">Fixing Saria Ghaziiii....</div>
         </div>
     `;
