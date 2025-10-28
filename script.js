@@ -603,7 +603,7 @@ function loadCureContent(question) {
         'angry': {
             title: 'Feeling angry?',
             quote: '"Anger is just love disappointed. It\'s love with nowhere to go." - Richard Siken',
-            message: 'You deserve good food today! Plus a warm hug from Tarun.',
+            message: 'You deserve good food today!',
             number: '1'
         },
         'sick': {
